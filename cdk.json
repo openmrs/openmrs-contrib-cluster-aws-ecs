@@ -1,0 +1,65 @@
+{
+  "app": "python3 app.py",
+  "watch": {
+    "include": [
+      "**"
+    ],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "requirements*.txt",
+      "source.bat",
+      "**/__init__.py",
+      "python/__pycache__",
+      "tests"
+    ]
+  },
+  "context": {
+    "security_group_ip_range_ipv4": null,
+    "security_group_ip_range_ipv6": null,
+    "certificate_arn": null,
+    "route53_domain": null,
+    "openmrs_reference_application_version": "3.2.0-rc.3",
+    "email_forwarding_address": null,
+    "openmrs_service_fargate_cpu_per_task": 2048,
+    "openmrs_service_fargate_ram_per_task": 4096,
+    "openmrs_service_fargate_minimum_capacity": 2,
+    "openmrs_service_fargate_maximum_capacity": 2,
+    "openmrs_service_fargate_cpu_autoscaling_percentage": 60,
+    "openmrs_service_fargate_memory_autoscaling_percentage": 60,
+    "sticky_session_cookie_length_in_minutes": 60,
+    "configure_ses": "false",
+    "enable_ecs_exec": "false",
+    "enable_bedrock_integration": "false",
+    "enable_data_api": "false",
+    "enable_global_accelerator": "false",
+    "open_smtp_port": "false",
+    "create_serverless_analytics_environment": "false",
+    "aurora_ml_inference_timeout": "30000",
+    "net_read_timeout": "30000",
+    "net_write_timeout": "30000",
+    "wait_timeout": "30000",
+    "connect_timeout": "30000",
+    "max_execution_time": "3000000",
+    "aliases": null,
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/core:target-partitions": [
+      "aws",
+      "aws-cn"
+    ],
+    "@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver": true,
+    "@aws-cdk/aws-ec2:uniqueImdsv2TemplateName": true,
+    "@aws-cdk/aws-ecs:arnFormatIncludesClusterName": true,
+    "@aws-cdk/aws-iam:minimizePolicies": true,
+    "@aws-cdk/core:validateSnapshotRemovalPolicy": true,
+    "@aws-cdk/aws-codepipeline:crossAccountKeyAliasStackSafeResourceName": true,
+    "@aws-cdk/aws-s3:createDefaultLoggingPolicy": true,
+    "@aws-cdk/aws-sns-subscriptions:restrictSqsDescryption": true,
+    "@aws-cdk/aws-apigateway:disableCloudWatchRole": true,
+    "@aws-cdk/core:enablePartitionLiterals": true,
+    "@aws-cdk/aws-events:eventsTargetQueueSameAccount": true,
+    "@aws-cdk/aws-iam:standardizedServicePrincipals": true,
+    "@aws-cdk/aws-ecs:disableExplicitDeploymentControllerForCircuitBreaker": true
+  }
+}

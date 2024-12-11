@@ -1,0 +1,4 @@
+.DS_Store
+cdk.out/
+openmrs_ecs/__pycache__/
+cdk.context.json
