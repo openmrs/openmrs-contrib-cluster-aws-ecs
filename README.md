@@ -242,8 +242,9 @@ You'll pay for the AWS resources you use with this architecture but since that w
 - 2 NAT Gateways ($0.09/hour base cost) [(pricing docs)](https://aws.amazon.com/vpc/pricing/#:~:text=contiguous%20IPv4%20block-,NAT%20Gateway%20Pricing,-If%20you%20choose)
 - 2 Secrets Manager Secrets ($0.80/month) [(pricing docs)](https://aws.amazon.com/secrets-manager/pricing/)
 - 1 WAF ACL ($5/month) [(pricing docs)](https://aws.amazon.com/waf/pricing/)
+- 1 KMS Key ($1/month) [(pricing docs)](https://aws.amazon.com/kms/pricing/)
 
-This works out to a base cost of $203.26/month. The true value of this architecture is its ability to rapidly autoscale and support even very large organizations.
+This works out to a base cost of $204.26/month. The true value of this architecture is its ability to rapidly autoscale and support even very large organizations.
 
 # Customizing Architecture Attributes
 
@@ -261,6 +262,7 @@ There are some additional parameters you can set in `cdk.json` that you can use 
  * `openmrs_reference_application_version`       Version of the OpenMRS reference application to run. Must be a valid docker image tag for the OpenMRS reference application images. A list of valid tags can be found [here](https://github.com/openmrs/openmrs-distro-referenceapplication/tags). Defaults to `"3.2.0-rc.3"`.
  * `openmrs_service_fargate_cpu_per_task`       Amount of CPU allocated to each Fargate task running OpenMRS. Defaults to `2048` (~2 vCPU). Note that your values for CPU and RAM must be valid Fargate task size combinations. For a list of valid CPU and RAM combinations see documentation [here](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size).
  * `openmrs_service_fargate_ram_per_task`       Amount of RAM allocated to each Fargate task running OpenMRS. Defaults to `4096` (~4 GiB). Note that your values for CPU and RAM must be valid Fargate task size combinations. For a list of valid CPU and RAM combinations see documentation [here](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size).
+ * `enable_long_term_cloudtrail_monitoring`        By default the architecture comes with a Cloudtrail Trail that logs all events in the same region the architecture is deployed to and stores them in Cloudwatch Logs for 9 years in addition to storing them in S3 for 7 years. You can choose to disable this for testing but we would recommend leaving it enabled for production settings. Defaults to "true".
  * `sticky_session_cookie_length_in_minutes`       Number of minutes that the cookies that facilitate sticky sessions should last. Hopefully in the near future a future version of OpenMRS makes it so that this parameter no longer exists.
  * `enable_ecs_exec`          Can be used to toggle ECS Exec functionality. Set to a value other than "true" to disable this functionality. Please note that this should generally be disabled and only enabled as needed. Defaults to "false".
  * `certificate_arn`          If specified will enable HTTPS for client to load balancer communications and will associate the specified certificate with the application load balancer for this architecture. This value, if specified, should be a string of an ARN in AWS Certificate Manager.

@@ -28,6 +28,7 @@
     "openmrs_service_fargate_cpu_autoscaling_percentage": 60,
     "openmrs_service_fargate_memory_autoscaling_percentage": 60,
     "sticky_session_cookie_length_in_minutes": 60,
+    "enable_long_term_cloudtrail_monitoring": "true",
     "configure_ses": "false",
     "enable_ecs_exec": "false",
     "enable_bedrock_integration": "false",
