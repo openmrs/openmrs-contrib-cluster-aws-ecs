@@ -3,6 +3,7 @@
 - [OpenMRS on AWS Fargate](#openmrs-on-aws-fargate)
 - [Hello OpenMRS Developer Community!](#hello-openmrs-developer-community!)
     + [Message From a Friend](#message-from-a-friend)
+    + [Kubernetes depoloyment](#kubernetes-deployment)
     + [Is This Production Ready?](#is-this-production-ready?)
     + [Request For a Few Additional OpenMRS Features](#request-for-a-few-additional-openmrs-features)
     + [Developing for OpenMRS Using This Architecture](#developing-for-openmrs-using-this-architecture)
@@ -48,6 +49,10 @@ I was asked to investigate if I could replicate our architecture for hosting Ope
 It was a lot harder than I thought it was going to be and while I wasn't able to replicate all of the features of the original architecture I have good news for you. 
 
 With very little modification to the OpenEMR reference backend image we should be able to replicate all of the functionality of the original architecture. Moreover, I can outline the three things we'd need to do to accomplish this and how I'd recommend approaching this.
+
+### Kubernetes deployment
+
+If you want to deploy OpenMRS for scale and HA on premise or to any cloud provider including AWS you may want to consider using the Kubernetes approach, which is documented at https://github.com/openmrs/openmrs-contrib-cluster. 
 
 ### Is This Production Ready?
 
